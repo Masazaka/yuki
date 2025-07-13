@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lồng Cu Thanh Tùng</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    .gallery {
+      display: flex;
+      gap: 20px;
+    }
+    .gallery img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      cursor: pointer;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+    }
+    .product-info {
+      margin-top: 30px;
+      padding: 20px;
+      border: 1px solid #999;
+      border-radius: 10px;
+      background-color: #f9f9f9;
+      display: none; /* Ẩn ban đầu */
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Danh sách sản phẩm</h1>
+
+  <div class="gallery">
+    <img src="images/1.jpg" alt="Sản phẩm 1" onclick="showInfo(0)">
+    <img src="images/2.jpg" alt="Sản phẩm 2" onclick="showInfo(1)">
+    <img src="images/3.jpg" alt="Sản phẩm 3" onclick="showInfo(2)">
+    <img src="images/4.jpg" alt="Sản phẩm 4" onclick="showInfo(3)">
+  </div>
+
+  <div class="product-info" id="productInfo">
+    <h2 id="productName">Tên sản phẩm</h2>
+    <p id="productDesc">Mô tả sản phẩm</p>
+    <p id="productPrice">Giá: </p>
+  </div>
+
+  <script>
+    const products = [
+      {
+        name: "Sản phẩm 1",
+        desc: "Đây là mô tả chi tiết của sản phẩm 1.",
+        price: "100.000 VNĐ"
+      },
+      {
+        name: "Sản phẩm 2",
+        desc: "Đây là mô tả chi tiết của sản phẩm 2.",
+        price: "200.000 VNĐ"
+      },
+      {
+        name: "Sản phẩm 3",
+        desc: "Đây là mô tả chi tiết của sản phẩm 3.",
+        price: "300.000 VNĐ"
+      },
+      {
+        name: "Sản phẩm 4",
+        desc: "Đây là mô tả chi tiết của sản phẩm 4.",
+        price: "400.000 VNĐ"
+      }
+    ];
+
+    function showInfo(index) {
+      const infoBox = document.getElementById("productInfo");
+      document.getElementById("productName").textContent = products[index].name;
+      document.getElementById("productDesc").textContent = products[index].desc;
+      document.getElementById("productPrice").textContent = "Giá: " + products[index].price;
+      infoBox.style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
