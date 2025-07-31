@@ -1,5 +1,40 @@
-NaOH => Na+ OH -
 HCl => H+ Cl -
-H2SO4 => 2H+ SO4 2-
+HBr => H+ Br -
+HI => H+ I -
+HNO3 => H+ NO3 -
+HClO4 => H+ ClO4 -
+H2SO4 => H+ HSO4 -
+HSO4- => H+ SO4 2-
+CH3COOH => H+ CH3COO -
+HF => H+ F -
+HCN => H+ CN -
+HNO2 => H+ NO2 -
+H2CO3 => H+ HCO3 -
+HCO3- => H+ CO3 2-
+H2S => H+ HS -
+HS- => H+ S 2-
+
+NaOH => Na+ OH -
 KOH => K+ OH -
+LiOH => Li+ OH -
+Ba(OH)2 => Ba2+ 2OH -
+Sr(OH)2 => Sr2+ 2OH -
 Ca(OH)2 => Ca2+ 2OH -
+
+NH3 => NH4+ OH -
+
+NaCl => Na+ Cl -
+KNO3 => K+ NO3 -
+CaCl2 => Ca2+ 2Cl -
+Na2SO4 => 2Na+ SO4 2-
+(NH4)2SO4 => 2NH4+ SO4 2-
+Mg(NO3)2 => Mg2+ 2NO3 -
+Al2(SO4)3 => 2Al3+ 3SO4 2-
+
+CH3COONa => Na+ CH3COO -
+NH4Cl => NH4+ Cl -
+NH4CH3COO => NH4+ CH3COO -
+
+BaSO4 => Kết tủa (không điện ly)
+AgCl => Kết tủa (không điện ly)
+PbI2 => Kết tủa (không điện ly)
