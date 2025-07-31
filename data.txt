@@ -1,0 +1,5 @@
+NaOH => Na+ OH -
+HCl => H+ Cl -
+H2SO4 => 2H+ SO4 2-
+KOH => K+ OH -
+Ca(OH)2 => Ca2+ 2OH -
