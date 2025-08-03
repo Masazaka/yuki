@@ -2,45 +2,36 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Điện Ly Hóa 11</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f0f4f8;
-      padding: 20px;
-      max-width: 600px;
-      margin: auto;
-    }
-    h1 {
-      text-align: center;
-      color: #2c3e50;
-    }
-    input, button {
-      padding: 10px;
-      font-size: 16px;
-      width: calc(100% - 24px);
-      margin-bottom: 10px;
-    }
-    .result {
-      background: #ecf0f1;
-      padding: 15px;
-      border-radius: 5px;
-      color: #2c3e50;
-      font-weight: bold;
-    }
-  </style>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Tra Cứu Điện Ly</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' href='style.css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body>
 
-  <h1>Điện Ly Hóa 11</h1>
-  <input type="text" id="inputCompound" placeholder="Nhập công thức (ví dụ: NaOH)">
-  <button onclick="traCuu()">Phân ly</button>
-  <div class="result" id="output">Kết quả sẽ hiển thị ở đây.</div>
+<body>
+  <div class="box">
+    <div class="login">
+      <div class="loginBox">
+        <h2><i class="fa-solid fa-flask"></i> Điện Ly Hóa 11 <i class="fa-solid fa-atom"></i></h2>
+
+        <input type="text" id="inputCompound" placeholder="Nhập công thức (ví dụ: NaOH)">
+        <input type="submit" value="Phân ly" onclick="traCuu()">
+
+        <div class="result" id="output">Kết quả sẽ hiển thị ở đây.</div>
+
+        <div class="group">
+          <a href="#">Tài liệu khác</a>
+          <a href="#">Đóng góp dữ liệu</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script>
     let dataMap = {};
 
-    // Đọc file data.txt khi trang được tải
+    // Đọc file data.txt
     fetch("data.txt")
       .then(response => response.text())
       .then(text => {
@@ -75,6 +66,5 @@
       }
     }
   </script>
-
 </body>
 </html>
