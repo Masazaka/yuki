@@ -8,16 +8,20 @@
       background-color: #111;
       color: #00ffcc;
       font-family: 'Courier New', monospace;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+      margin: 0;
+      padding: 0;
     }
 
     #clock {
       font-size: 60px;
       letter-spacing: 2px;
       text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+      border: 3px solid #00ffcc;
+      border-radius: 20px;
+      padding: 20px 40px;
+      width: fit-content;
+      margin: 80px auto 0 auto; /* Đẩy lên cao bằng margin-top */
+      box-shadow: 0 0 20px #00ffcc66;
     }
   </style>
 </head>
@@ -34,9 +38,7 @@
       document.getElementById('clock').textContent = timeString;
     }
 
-    // Gọi hàm mỗi giây
     setInterval(updateClock, 1000);
-    // Gọi ngay khi tải trang
     updateClock();
   </script>
 </body>
