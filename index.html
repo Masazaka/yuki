@@ -2,44 +2,75 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Đồng hồ thời gian thực</title>
-  <style>
-    body {
-      background-color: #111;
-      color: #00ffcc;
-      font-family: 'Courier New', monospace;
-      margin: 0;
-      padding: 0;
-    }
-
-    #clock {
-      font-size: 60px;
-      letter-spacing: 2px;
-      text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
-      border: 3px solid #00ffcc;
-      border-radius: 20px;
-      padding: 20px 40px;
-      width: fit-content;
-      margin: 80px auto 0 auto; /* Đẩy lên cao bằng margin-top */
-      box-shadow: 0 0 20px #00ffcc66;
-    }
-  </style>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>YUKI HUD</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' href='style.css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="icon" href="icon.png" type="image/png">
 </head>
+  
 <body>
-  <div id="clock">00:00:00</div>
+  <div class="box">
+    <div class="login">
+      <div class="loginBox">
+        <h2><i class="fa-solid fa-flask"></i> WELCOME TO MY HUD<i class="fa-solid fa-atom"></i></h2>
+
+        <input type="text" id="inputCompound" placeholder="Nhập công thức (ví dụ: NaOH)">
+        <input type="submit" value="Phân ly" onclick="traCuu()">
+
+        <div class="result" id="output">Kết quả sẽ hiển thị ở đây.</div>
+
+        <div class="group">
+          <a href="#">Tài liệu khác</a>
+          <a href="#">Đóng góp dữ liệu</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script>
-    function updateClock() {
-      const now = new Date();
-      const hours = String(now.getHours()).padStart(2, '0');
-      const minutes = String(now.getMinutes()).padStart(2, '0');
-      const seconds = String(now.getSeconds()).padStart(2, '0');
-      const timeString = `${hours}:${minutes}:${seconds}`;
-      document.getElementById('clock').textContent = timeString;
-    }
+    let dataMap = {};
 
-    setInterval(updateClock, 1000);
-    updateClock();
+    // Đọc file data.txt
+    fetch("data.txt")
+      .then(response => response.text())
+      .then(text => {
+        const lines = text.split("\n");
+        lines.forEach(line => {
+          const parts = line.split("=>");
+          if (parts.length === 2) {
+            const key = parts[0].trim().toUpperCase();
+            const value = parts[1].trim();
+            dataMap[key] = value;
+          }
+        });
+      })
+      .catch(error => {
+        document.getElementById("output").innerText = "Không thể tải dữ liệu.";
+        console.error("Lỗi khi tải file dữ liệu:", error);
+      });
+
+    function traCuu() {
+      const input = document.getElementById("inputCompound").value.trim().toUpperCase();
+      const output = document.getElementById("output");
+
+      if (input === "") {
+        output.innerText = "Vui lòng nhập công thức hoá học.";
+        return;
+      }
+
+      if (dataMap[input]) {
+        output.innerText = `${input} → ${dataMap[input]}`;
+      } else {
+        output.innerText = "Không tìm thấy kết quả phân ly.";
+      }
+    }
   </script>
 </body>
 </html>
+
+
+
+
+
